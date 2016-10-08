@@ -26,6 +26,21 @@ export class PlanService {
             .toPromise()
             .then(resp => resp.json() as any[]);
     }
+
+    addPlan(plan: any) {
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers });
+        plan = JSON.stringify(plan);
+        return this._http.post(this._url, plan, options)
+            .toPromise()
+            .then(resp => resp.json())
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
+    }
 }
 
 

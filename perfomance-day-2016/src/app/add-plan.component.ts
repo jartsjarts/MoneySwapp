@@ -4,13 +4,15 @@ import {ActivatedRoute, Router, Params} from '@angular/router';
 import { Validators } from '@angular/forms';
 import {Currency, ICurrency} from './currency';
 import {Plan} from './plan';
+import {User} from './user';
 import {CurrencyService} from './currencies.service';
 import {PlanService} from './plans.service';
+import {UserService} from './users.service';
 
 @Component({
     templateUrl: 'add-plan.component.html',
     selector: 'add-plan',
-    providers: [CurrencyService, PlanService]
+    providers: [CurrencyService, PlanService, UserService]
 })
 export class AddPlanComponent implements OnInit {
     form: any;
@@ -19,21 +21,40 @@ export class AddPlanComponent implements OnInit {
     currencies: ICurrency[];
     error: any;
     isSameCurrency: boolean;
+    userId: string;
+    user: User;
     
-    constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _currencyService: CurrencyService, private _planService: PlanService) 
+    constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _currencyService: CurrencyService, private _planService: PlanService, private _userService: UserService) 
     {
         this.isSameCurrency = true;
         this.plan.currIn = new Currency();
         this.plan.currOut = new Currency();
+        this.user = new User();
     }
 
     ngOnInit() {
+        this._activatedRoute.params.forEach((params: Params) => {
+            if (params['userId'] !== undefined) {
+                this.userId = params['userId'];
+                console.log(this.userId);
+            }
+        });
         
-        this.title = "Add Plan";
-        
+        if (!this.userId) {
+            return;
+        }
+        this._userService.getUser(this.userId)
+            .then(user => 
+            {
+                this.user = user;
+                this.title = "Add Plan" + " to user " + this.user.name;
+            }   )
+            .catch(error => this.error = error);
         this._currencyService.getCurrencies()
             .then(currencies => this.currencies = currencies)
             .catch(error => this.error = error);
+             
+        this.plan.userId = this.userId;   
         
     }
 
@@ -54,17 +75,10 @@ export class AddPlanComponent implements OnInit {
     }
 
 
-    // save() {
-    //     if (this.id) {
-    //         this._userService.editUser(this.user, this.id.toString())
-    //             .then(x => {
-    //                 this._router.navigate(['/users']);
-    //             });
-    //     } else {
-    //         this._userService.addUser(this.user)
-    //             .then(x => {
-    //                 this._router.navigate(['/users']);
-    //             });
-    //     }
-    // }
+    save() {        
+        this._planService.addPlan(this.plan)
+            .then(x => {
+                this._router.navigate(['/users', this.userId]);
+            });        
+    }
 }

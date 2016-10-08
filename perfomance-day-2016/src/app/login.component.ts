@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router, Params} from '@angular/router';
+
+import {UserService} from './users.service';
+import { User } from './user';
 
 @Component({
     selector: 'login',
@@ -18,14 +22,21 @@ import { Component, OnInit } from '@angular/core';
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>User</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+
+                                <select class="form-control" #u placeholder="Name" (change)="selectedUser({userId: u.value})" id="name" required data-validation-required-message="Please enter your name.">
+                                    <option value="">select user..</option>
+                                    <option *ngFor="let user of users" value={{user.id}}> 
+                                        {{user.name}} 
+                                    </option>
+                                </select>
+
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="password" class="form-control" placeholder="Password" id="pass" required data-validation-required-message="Please enter your password.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -33,7 +44,7 @@ import { Component, OnInit } from '@angular/core';
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12 text-center">
-                                <button type="submit" class="btn btn-success btn-lg">Accept</button>
+                                <button type="submit" (click)="loginUser()" class="btn btn-success btn-lg">Accept</button>
                                 <button type="cancel" class="btn btn-success btn-lg" style="margin-left: 20px;">Cancel</button>
                             </div>
                         </div>
@@ -44,4 +55,25 @@ import { Component, OnInit } from '@angular/core';
     `
 })
 
-export class LoginComponent { }
+export class LoginComponent implements OnInit {
+    users: User[];
+    error: any;
+    selectedId: number;
+
+    constructor(private _service: UserService, private _router: Router) { }
+
+    ngOnInit() {
+        this._service.getUsers()
+            .then(users => this.users = users)
+            .catch(error => this.error = error);
+    }
+
+    public selectedUser(userId: number){
+        this.selectedId = userId;
+    }
+
+    public loginUser(){
+        this._router.navigate(['/users', this.selectedId]);
+    }
+
+}

@@ -40,7 +40,7 @@ const appRoutes: Routes = [
     component: PlansComponent
   },
   {
-    path: 'add-plan',
+    path: 'add-plan/:userId',
     component: AddPlanComponent
   },
   {

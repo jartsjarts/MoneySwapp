@@ -10,6 +10,7 @@ import { NavBarComponent } from './navbar.component';
 import { HomeComponent } from './home.component';
 import { UsersComponent } from './users.component';
 import { UserService } from './users.service';
+import { CurrencyService } from './currencies.service';
 import { UserFormComponent } from './user-form.component';
 import { NotFoundComponent } from './not-found.component';
 import { SpinnerComponent } from './spinner.component';
@@ -34,7 +35,8 @@ import { PostsComponent } from './posts.component';
     routedComponents
   ],
   providers: [
-    UserService
+    UserService,
+    CurrencyService
   ],
   bootstrap: [AppComponent]
 })

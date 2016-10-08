@@ -6,8 +6,8 @@
 		"location": {"id" : 100, "name": "Barcelona"},
 		"from"    : "2016-10-07T00:00:00",
 		"to"      : "2016-10-08T00:00:00",
-		"currIn"  : {"iso" : "EUR", "sym" : "€"},
-		"currOut" : {"iso" : "USD", "sym" : "$"},
+		"currIn"  : {"code" : "EUR", "symbol" : "€"},
+		"currOut" : {"code" : "USD", "symbol" : "$"},
 		"amount"  : 125
 	  },
 	  {
@@ -17,8 +17,8 @@
 		"from"    : "2016-10-06T00:00:00",
 		"to"      : "2016-10-08T00:00:00",
 		
-		"currIn" : {"iso" : "USD", "sym" : "$"},
-		"currOut"  : {"iso" : "EUR", "sym" : "€"},
+		"currIn" : {"code" : "USD", "symbol" : "$"},
+		"currOut"  : {"code" : "EUR", "symbol" : "€"},
 		"amount"  : 125
 	  }
 	],
@@ -38060,9 +38060,7 @@
     }
 
 
-  ],
-
-  "plans" : [
-
   ]
+
+  
 }

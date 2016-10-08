@@ -52,8 +52,8 @@ import {PlanService} from './plans.service';
                                 <td nowrap>{{ plan.location.name }}</td>
                                 <td nowrap>{{ plan.from | date:"dd/MM/yyyy HH:mm"}}</td>
                                 <td nowrap>{{ plan.to | date:"dd/MM/yyyy HH:mm"}}</td>
-                                <td nowrap>{{ plan.currOut.sym }}</td>
-                                <td nowrap>{{ plan.amount | number:'1.2-2'}} {{ plan.currIn.sym }}</td>
+                                <td nowrap>{{ plan.currOut.symbol }}</td>
+                                <td nowrap>{{ plan.amount | number:'1.2-2'}} {{ plan.currIn.symbol }}</td>
 
                                 <td>
                                     <a (click)="findMatches(plan)"><i class="glyphicon glyphicon-edit"></i> </a>
@@ -84,8 +84,8 @@ import {PlanService} from './plans.service';
                                 <td nowrap>{{ match.location.name }}</td>
                                 <td nowrap>{{ match.from | date:"dd/MM/yyyy HH:mm"}}</td>
                                 <td nowrap>{{ match.to | date:"dd/MM/yyyy HH:mm"}}</td>
-                                <td nowrap>{{ match.currOut.sym }}</td>
-                                <td nowrap>{{ match.amount | number:'1.2-2'}} {{ match.currIn.sym }}</td>
+                                <td nowrap>{{ match.currOut.symbol }}</td>
+                                <td nowrap>{{ match.amount | number:'1.2-2'}} {{ match.currIn.symbol }}</td>
                             </tr>
                         </tbody>
                     </table>

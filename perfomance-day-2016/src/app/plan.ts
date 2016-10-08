@@ -1,4 +1,6 @@
+import { Currency, ICurrency } from './currency';
 import {User} from './user';
+
 
 export class Location {
     id: string;
@@ -12,24 +14,14 @@ export class Location {
     }
 }
 
-export class Currency {
-    iso: string;
-    sym: string;
-
-    isMatch(currency: Currency): boolean
-    {
-        return currency && currency.iso == this.iso;
-    }
-}
-
 export class Plan {
     id: string;
     userId: string;
     location: Location;
     from: Date;
     to: Date;
-    currIn : Currency;
-    currOut : Currency;
+    currIn : ICurrency;
+    currOut : ICurrency;
     amount: number;
     proposedMe: boolean;
     proposedOther: boolean;

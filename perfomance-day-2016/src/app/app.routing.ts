@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login.component';
 import { UsersComponent } from './users.component';
 import { UserFormComponent } from './user-form.component';
+import { AddPlanComponent } from './add-plan.component';
 import { NotFoundComponent } from './not-found.component';
 import { PostsComponent } from './posts.component';
 import { PlansComponent } from './plans.component';
@@ -37,6 +38,10 @@ const appRoutes: Routes = [
   {
     path: 'plans',
     component: PlansComponent
+  },
+  {
+    path: 'add-plan',
+    component: AddPlanComponent
   },
   {
     path: 'not-found',

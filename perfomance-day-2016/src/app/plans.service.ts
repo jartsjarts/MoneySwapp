@@ -21,20 +21,6 @@ export class PlanService {
             .then(resp => resp.json() as Plan[]);
     }
 
-    getMatches(plan: Plan): Promise<Plan[]> {
-        var url = this._url;
- 
-        return this._http.get(url)
-            .flatMap((response) => response.json() as Plan[])
-            .filter((candidatePlan) => plan.isMatch(candidatePlan))
-            .toPromise()
-            .then(resp => resp as Plan[]);
-            
-
-       
-            
-    }
-
     getComments(postId: string): Promise<any[]> {
         return this._http.get(this._url + "/" + postId + "/comments")
             .toPromise()

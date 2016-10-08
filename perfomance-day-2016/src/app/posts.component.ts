@@ -12,6 +12,7 @@ import {PostService} from './posts.service';
 @Component({
     selector: 'posts',
     template: `
+    <div class="container container-default">
         <h1>Posts Page</h1>
 
         <div class="row">
@@ -50,6 +51,7 @@ import {PostService} from './posts.service';
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     `,
     styles: [`

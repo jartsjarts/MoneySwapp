@@ -12,6 +12,7 @@ import { UsersComponent } from './users.component';
 import { UserService } from './users.service';
 import { CurrencyService } from './currencies.service';
 import { UserFormComponent } from './user-form.component';
+import { AddPlanComponent } from './add-plan.component';
 import { NotFoundComponent } from './not-found.component';
 import { SpinnerComponent } from './spinner.component';
 import { PostsComponent } from './posts.component';
@@ -29,6 +30,7 @@ import { PostsComponent } from './posts.component';
     HomeComponent,
     UsersComponent,
     UserFormComponent,
+    AddPlanComponent,
     NotFoundComponent,
     PostsComponent,
     SpinnerComponent,

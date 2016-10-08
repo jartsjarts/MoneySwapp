@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { UsersComponent } from './users.component';
 import { UserFormComponent } from './user-form.component';
+import { AddPlanComponent } from './add-plan.component';
 import { NotFoundComponent } from './not-found.component';
 import { PostsComponent } from './posts.component';
 
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'posts',
     component: PostsComponent
+  },
+  {
+    path: 'add-plan',
+    component: AddPlanComponent
   },
   {
     path: 'not-found',

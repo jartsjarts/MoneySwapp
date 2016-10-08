@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
+import { LoginComponent } from './login.component';
 import { UsersComponent } from './users.component';
 import { UserFormComponent } from './user-form.component';
 import { AddPlanComponent } from './add-plan.component';
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'users',

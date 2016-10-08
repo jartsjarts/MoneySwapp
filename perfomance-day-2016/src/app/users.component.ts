@@ -6,6 +6,7 @@ import { User } from './user';
 @Component({
     selector: 'users',
     template: `
+    <div class="container container-default">
         <h1>Users</h1>
         <a routerLink="/users/new" class="btn btn-primary">Add User</a>
         <table class="table table-bordered">
@@ -30,6 +31,7 @@ import { User } from './user';
                 </tr>
             </tbody>
         </table>
+    </div>
     `,
     styles: [`
             .clickable{

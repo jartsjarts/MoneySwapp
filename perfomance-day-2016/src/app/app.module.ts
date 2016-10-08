@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { routing, routedComponents } from './app.routing';
 import { NavBarComponent } from './navbar.component';
 import { HomeComponent } from './home.component';
+import { LoginComponent } from './login.component';
 import { UsersComponent } from './users.component';
 import { UserService } from './users.service';
 import { CurrencyService } from './currencies.service';
@@ -28,6 +29,7 @@ import { PostsComponent } from './posts.component';
     AppComponent,
     NavBarComponent,
     HomeComponent,
+    LoginComponent,
     UsersComponent,
     UserFormComponent,
     AddPlanComponent,

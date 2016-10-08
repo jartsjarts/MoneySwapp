@@ -1,4 +1,29 @@
 {
+"plans": [
+	  {
+		"id"      : 1,
+		"userId"  : 11,
+		"location": {"id" : 100, "name": "Barcelona"},
+		"from"    : "2016-10-07T00:00:00",
+		"to"      : "2016-10-08T00:00:00",
+		"currIn"  : {"iso" : "EUR", "sym" : "€"},
+		"currOut" : {"iso" : "USD", "sym" : "$"},
+		"amount"  : 125
+	  },
+	  {
+		"id"      : 2,
+		"userId"  : 12,
+		"location": {"id" : 100, "name": "Barcelona"},
+		"from"    : "2016-10-06T00:00:00",
+		"to"      : "2016-10-08T00:00:00",
+		
+		"currIn" : {"iso" : "USD", "sym" : "$"},
+		"currOut"  : {"iso" : "EUR", "sym" : "€"},
+		"amount"  : 125
+	  }
+	],
+
+
   "posts": [
     {
       "userId": 2,
@@ -547,7 +572,8 @@
       "id": 51,
       "name": "molestias et odio ut commodi omnis ex",
       "email": "Laurie@lincoln.us",
-      "body": "perferendis omnis esse\nvoluptate sit mollitia sed perferendis\nnemo nostrum qui\nvel quis nisi doloribus animi odio id quas"
+      "body": "perferendis omnis esse\nvoluptate sit mollitia sed perferendis\nnemo nostrum qui\nvel quis nisi doloribus animi odio id quas",
+      "test": "yes"
     },
     {
       "postId": 11,

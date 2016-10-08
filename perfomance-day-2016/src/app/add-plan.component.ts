@@ -48,7 +48,7 @@ export class AddPlanComponent implements OnInit {
             {
                 this.user = user;
                 this.title = "Add Plan" + " to user " + this.user.name;
-            })
+            }   )
             .catch(error => this.error = error);
         this._currencyService.getCurrencies()
             .then(currencies => this.currencies = currencies)

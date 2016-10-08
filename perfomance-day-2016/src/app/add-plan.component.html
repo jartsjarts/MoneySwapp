@@ -1,3 +1,4 @@
+<div class="container container-default">
 <h1>{{title}}</h1>
 <div class="row">
     <div class="col-md-6 well">
@@ -16,7 +17,7 @@
 
                 <div class="form-group">
                     <label>Source currency</label>
-                    <select #currin (change)="selectedChanged(currin.value, currout.value)" id="currencyIn" class="form-control">
+                    <select #currin (change)="selectedCurrInChanged(currin.value, currout.value)" id="currencyIn" class="form-control">
                         <option *ngFor="let currency of currencies" [value]="currency.code" >
                             {{currency.name}} {{currency.symbol}}
                         </option>
@@ -25,7 +26,7 @@
 
                 <div class="form-group">
                     <label>Destination currency</label>
-                    <select #currout (change)="selectedChanged(currout.selected, currin.value)" id="currencyOut" class="form-control">
+                    <select #currout (change)="selectedCurrOutChanged(currout.selected, currin.value)" id="currencyOut" class="form-control">
                         <option *ngFor="let currency of currencies" [value]="currency.code">
                             {{currency.name}} {{currency.symbol}}
                         </option>
@@ -62,4 +63,5 @@
             <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">Save</button>
         </form>
     </div>
+</div>
 </div>

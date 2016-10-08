@@ -5,11 +5,12 @@ import { Validators } from '@angular/forms';
 import {Currency, ICurrency} from './currency';
 import {Plan} from './plan';
 import {CurrencyService} from './currencies.service';
+import {PlanService} from './plans.service';
 
 @Component({
     templateUrl: 'add-plan.component.html',
     selector: 'add-plan',
-    providers: [CurrencyService]
+    providers: [CurrencyService, PlanService]
 })
 export class AddPlanComponent implements OnInit {
     form: any;
@@ -19,7 +20,7 @@ export class AddPlanComponent implements OnInit {
     error: any;
     isSameCurrency: boolean;
     
-    constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _currencyService: CurrencyService) 
+    constructor(private _activatedRoute: ActivatedRoute, private _router: Router, private _currencyService: CurrencyService, private _planService: PlanService) 
     {
         this.isSameCurrency = true;
         this.plan.currIn = new Currency();

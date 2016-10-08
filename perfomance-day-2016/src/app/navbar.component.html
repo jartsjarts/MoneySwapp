@@ -11,12 +11,6 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<<<<<<< HEAD
-            <ul class="nav navbar-nav">
-                <li [class.active]="isCurrentRoute('users')"><a routerLink="/users">Users</a></li>
-                <li [class.active]="isCurrentRoute('posts')"><a routerLink="/posts">Posts</a></li>
-                <li [class.active]="isCurrentRoute('add-plan')"><a routerLink="/add-plan">Add plan</a></li>
-=======
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
                     <a routerLink="/home" fragment="page-top"></a>
@@ -36,10 +30,12 @@
                 <li [class.active]="isCurrentRoute('posts')">
                     <a routerLink="/posts">Posts</a>
                 </li>
+                <li [class.active]="isCurrentRoute('add-plan')">
+                    <a routerLink="/add-plan">Add plan</a>
+                </li>
                 <li [class.active]="isCurrentRoute('login')">
                     <a routerLink="/login">Login/Sign out</a>
                 </li>
->>>>>>> master
             </ul>
         </div>
         <!-- /.navbar-collapse -->

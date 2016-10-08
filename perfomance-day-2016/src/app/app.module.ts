@@ -15,6 +15,7 @@ import { UserFormComponent } from './user-form.component';
 import { NotFoundComponent } from './not-found.component';
 import { SpinnerComponent } from './spinner.component';
 import { PostsComponent } from './posts.component';
+import { PlansComponent } from './plans.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { PostsComponent } from './posts.component';
     UserFormComponent,
     NotFoundComponent,
     PostsComponent,
+    PlansComponent,
     SpinnerComponent,
     routedComponents
   ],

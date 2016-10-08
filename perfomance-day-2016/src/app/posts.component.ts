@@ -44,7 +44,7 @@ import {PostService} from './posts.service';
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">{{ comment.name }}</h4>
+                            <h4 class="media-heading">{{ comment.name }}  {{ comment.test }}</h4>
                             {{comment.body}}
                         </div>
                     </div>

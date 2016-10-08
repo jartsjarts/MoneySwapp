@@ -1,3 +1,5 @@
+import {User} from './user';
+
 export class Location {
     id: string;
     name: string;
@@ -32,6 +34,8 @@ export class Plan {
     proposedMe: boolean;
     proposedOther: boolean;
     accepted : boolean;
+
+    userReference : User;
 
     isMatch(plan: Plan): boolean
     {

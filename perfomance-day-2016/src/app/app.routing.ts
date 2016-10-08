@@ -5,6 +5,7 @@ import { UsersComponent } from './users.component';
 import { UserFormComponent } from './user-form.component';
 import { NotFoundComponent } from './not-found.component';
 import { PostsComponent } from './posts.component';
+import { PlansComponent } from './plans.component';
 
 const appRoutes: Routes = [
   {
@@ -29,8 +30,8 @@ const appRoutes: Routes = [
     component: UserFormComponent
   },
   {
-    path: 'posts',
-    component: PostsComponent
+    path: 'plans',
+    component: PlansComponent
   },
   {
     path: 'not-found',
@@ -41,4 +42,4 @@ const appRoutes: Routes = [
 
 export const routing = RouterModule.forRoot(appRoutes);
 
-export const routedComponents = [HomeComponent, UserFormComponent, NotFoundComponent, PostsComponent];
+export const routedComponents = [HomeComponent, UserFormComponent, NotFoundComponent, PostsComponent, PlansComponent];

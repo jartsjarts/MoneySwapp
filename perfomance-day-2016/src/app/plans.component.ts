@@ -13,6 +13,7 @@ import {PlanService} from './plans.service';
 @Component({
     selector: 'plans',
     template: `
+    <div class="container container-default">
         <h1>Defined swapp plans for user</h1>
 
         <div class="row">
@@ -92,6 +93,7 @@ import {PlanService} from './plans.service';
             </div>
 
         </div>
+    </div>
     `,
     styles: [`
         .plans li { cursor: default; }
